@@ -1,0 +1,3 @@
+zabbix_server: 10.0.0.29
+yum_repo: 172.16.218.210
+falcon_agent: 172.16.218.210

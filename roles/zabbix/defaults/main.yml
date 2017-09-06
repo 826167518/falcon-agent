@@ -1,0 +1,6 @@
+#ipaddr: "{{ ansible_default_ipv4.address }}"
+#
+#zabbix_host:
+#   ipaddr: "{{ ansible_default_ipv4.address }}"
+#   inetrc_ip: "{{ ipaddr |regex_replace('^(?P<IP1>[0-9]+).(?P<IP2>[0-9]+).(?P<IP3>[0-9]+).(?P<IP4>[0-9]+)','\\g<IP1>.\\g<IP2>.\\g<IP3>.\\g<IP4>')}}"
+#zabbix_server: 10.0.0.29

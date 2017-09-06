@@ -1,0 +1,10 @@
+- name: Install falcon-agent packge
+  yum: name=falcon-agent state=latest
+
+- name: Put on the falcon-agent conf files
+  template: src={{item.src}} dest={{item.dest}} owner=root group=root mode={{item.mode}} force=yes backup=yes
+  with_items:
+    - { src: 'cfg.json.j2', dest: '/usr/local/falcon-agent/cfg.json', mode: 644 }
+
+- name: falcon-agent restart 
+  shell: /usr/local/falcon-agent/control restart

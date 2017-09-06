@@ -1,0 +1,10 @@
+---
+- name: Create groups
+  group: name={{ group }}  state=present 
+
+- name: Create the users
+  user: name={{ user }}
+        state=present 
+        shell={{ shell }}
+        comment={{ comment }}
+        group={{ group }}   

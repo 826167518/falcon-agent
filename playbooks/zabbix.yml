@@ -1,0 +1,10 @@
+---
+- hosts: all
+  user: root
+  become: yes
+  gather_facts: yes
+  roles:
+    - user
+    - repo
+    - zabbix
+

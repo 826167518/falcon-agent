@@ -1,0 +1,5 @@
+user: zabbix
+comment: zabbix
+shell: /bin/bash
+group: zabbix
+

@@ -1,0 +1,7 @@
+- name: Put on the szy.repo conf files
+  template: src={{item.src}} dest={{item.dest}} owner=root group=root mode={{item.mode}} force=yes 
+  with_items:
+    - { src: 'szy.repo.j2', dest: '/etc/yum.repos.d/szy.repo', mode: 644 }
+
+- name: mekecache yum
+  command: yum makecache
