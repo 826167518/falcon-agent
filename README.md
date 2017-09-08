@@ -10,8 +10,8 @@ falcon-agent <br />
 ├── ansible.cfg <br />
 ├── hosts<br />
 ├── inventory<br />
-│&nbsp;&nbsp;&nbsp;├── group_vars<br />
-│&nbsp;&nbsp;&nbsp;│   └── all<br />
+│ &nbsp;&nbsp;&nbsp;  ├── group_vars<br />
+│ &nbsp;&nbsp;&nbsp;  │   └── all<br />
 │ &nbsp;&nbsp;&nbsp;  ├── hosts.yml<br />
 │ &nbsp;&nbsp;&nbsp;  └── host_vars<br />
 │ &nbsp;&nbsp;&nbsp;      └── zt-ce01.yml<br />
