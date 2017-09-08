@@ -60,8 +60,8 @@ falcon-agent <br />
 │       │   └── main.yml<br />
 │       └── templates<br />
 │           └── zabbix_agentd.conf<br />
-└── task<br />
-     ├── install.sh <br />
+└── task
+     ├── install.sh<br />
      ├── LICENSE<br />
      └── README.md<br />
 
