@@ -14,7 +14,7 @@ falcon-agent <br />
 │........│........└── all<br />
 │........├── hosts.yml<br />
 │........└── host_vars<br />
-│.................└── zt-ce01.yml<br />
+│..................└── zt-ce01.yml<br />
 ├── playbooks<br />
 │........├── falcon-agent.yml<br />
 │........├── supervisor.yml<br />
