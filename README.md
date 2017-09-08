@@ -9,116 +9,61 @@
 falcon-agent <br />
 ├── ansible.cfg <br />
 ├── hosts<br />
-
-├── inventory
-
-│   ├── group_vars
-
-│   │   └── all
-
-│   ├── hosts.yml
-
-│   └── host_vars
-
-│       └── zt-ce01.yml
-
-├── playbooks
-
-│   ├── falcon-agent.yml
-
-│   ├── supervisor.yml
-
-│   ├── useradd.yml
-
-│   └── zabbix.yml
-
-├── README.md
-
-├── roles
-
-│   ├── falcon-agent
-
-│   │   ├── defaults
-
-│   │   │   └── main.yml
-
-│   │   ├── tasks
-
-│   │   │   └── main.yml
-
-│   │   └── templates
-
-│   │       ├── cfg.json.j2
-
-│   │       └── falcon_agent.ini.j2
-
-│   ├── iptables
-
-│   │   └── tasks
-
-│   │       └── main.yml
-
-│   ├── repo
-
-│   │   ├── tasks
-
-│   │   │   └── main.yml
-
-│   │   └── templates
-
-│   │       ├── epel.repo.j2
-
-│   │       └── szy.repo.j2
-
-│   ├── supervisord
-
-│   │   ├── defaults
-
-│   │   ├── tasks
-
-│   │   │   └── main.yml
-
-│   │   └── templates
-
-│   │       ├── supervisord.conf.j2
-
-│   │       └── supervisord.j2
-
-│   ├── user
-
-│   │   ├── defaults
-
-│   │   │   └── main.yml
-
-│   │   └── tasks
-
-│   │       └── main.yml
-
-│   └── zabbix
-
-│       ├── defaults
-
-│       │   └── main.yml
-
-│       ├── handlers
-
-│       ├── meta
-
-│       ├── tasks
-
-│       │   └── main.yml
-
-│       └── templates
-
-│           └── zabbix_agentd.conf
-
-└── task
-
-    ├── install.sh
-
-    ├── LICENSE
-
-    └── README.md
+├── inventory<br />
+│   ├── group_vars<br />
+│   │   └── all<br />
+│   ├── hosts.yml<br />
+│   └── host_vars<br />
+│       └── zt-ce01.yml<br />
+├── playbooks<br />
+│   ├── falcon-agent.yml<br />
+│   ├── supervisor.yml<br />
+│   ├── useradd.yml<br />
+│   └── zabbix.yml<br />
+├── README.md<br />
+├── roles<br />
+│   ├── falcon-agent<br />
+│   │   ├── defaults<br />
+│   │   │   └── main.yml<br />
+│   │   ├── tasks<br />
+│   │   │   └── main.yml<br />
+│   │   └── templates<br />
+│   │       ├── cfg.json.j2<br />
+│   │       └── falcon_agent.ini.j2<br />
+│   ├── iptables<br />
+│   │   └── tasks<br />
+│   │       └── main.yml<br />
+│   ├── repo<br />
+│   │   ├── tasks<br />
+│   │   │   └── main.yml<br />
+│   │   └── templates<br />
+│   │       ├── epel.repo.j2<br />
+│   │       └── szy.repo.j2<br />
+│   ├── supervisord<br />
+│   │   ├── defaults<br />
+│   │   ├── tasks<br />
+│   │   │   └── main.yml<br />
+│   │   └── templates<br />
+│   │       ├── supervisord.conf.j2<br />
+│   │       └── supervisord.j2<br />
+│   ├── user<br />
+│   │   ├── defaults<br />
+│   │   │   └── main.yml<br />
+│   │   └── tasks<br />
+│   │       └── main.yml<br />
+│   └── zabbix<br />
+│       ├── defaults<br />
+│       │   └── main.yml<br />
+│       ├── handlers<br />
+│       ├── meta<br />
+│       ├── tasks<br />
+│       │   └── main.yml<br />
+│       └── templates<br />
+│           └── zabbix_agentd.conf<br />
+└── task<br />
+    ├── install.sh <br />
+    ├── LICENSE<br />
+    └── README.md<br />
 
 
 安装完毕ansible之后，直接进入到该文件的ansible.cfg的同级目录下
