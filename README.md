@@ -10,56 +10,56 @@ falcon-agent <br />
 ├── ansible.cfg <br />
 ├── hosts<br />
 ├── inventory<br />
-│ &nbsp;&nbsp;&nbsp;  ├── group_vars<br />
-│   │   └── all<br />
-│   ├── hosts.yml<br />
-│   └── host_vars<br />
-│       └── zt-ce01.yml<br />
+│&nbsp;&nbsp;&nbsp;├── group_vars<br />
+│&nbsp;&nbsp;&nbsp;│   └── all<br />
+│ &nbsp;&nbsp;&nbsp;  ├── hosts.yml<br />
+│ &nbsp;&nbsp;&nbsp;  └── host_vars<br />
+│ &nbsp;&nbsp;&nbsp;      └── zt-ce01.yml<br />
 ├── playbooks<br />
-│   ├── falcon-agent.yml<br />
-│   ├── supervisor.yml<br />
-│   ├── useradd.yml<br />
-│   └── zabbix.yml<br />
+│ &nbsp;&nbsp;&nbsp;  ├── falcon-agent.yml<br />
+│ &nbsp;&nbsp;&nbsp;  ├── supervisor.yml<br />
+│ &nbsp;&nbsp;&nbsp;  ├── useradd.yml<br />
+│ &nbsp;&nbsp;&nbsp;  └── zabbix.yml<br />
 ├── README.md<br />
 ├── roles<br />
-│   ├── falcon-agent<br />
-│   │   ├── defaults<br />
-│   │   │   └── main.yml<br />
-│   │   ├── tasks<br />
-│   │   │   └── main.yml<br />
-│   │   └── templates<br />
-│   │       ├── cfg.json.j2<br />
-│   │       └── falcon_agent.ini.j2<br />
-│   ├── iptables<br />
-│   │   └── tasks<br />
-│   │       └── main.yml<br />
-│   ├── repo<br />
-│   │   ├── tasks<br />
-│   │   │   └── main.yml<br />
-│   │   └── templates<br />
-│   │       ├── epel.repo.j2<br />
-│   │       └── szy.repo.j2<br />
-│   ├── supervisord<br />
-│   │   ├── defaults<br />
-│   │   ├── tasks<br />
-│   │   │   └── main.yml<br />
-│   │   └── templates<br />
-│   │       ├── supervisord.conf.j2<br />
-│   │       └── supervisord.j2<br />
-│   ├── user<br />
-│   │   ├── defaults<br />
-│   │   │   └── main.yml<br />
-│   │   └── tasks<br />
-│   │       └── main.yml<br />
-│   └── zabbix<br />
-│       ├── defaults<br />
-│       │   └── main.yml<br />
-│       ├── handlers<br />
-│       ├── meta<br />
-│       ├── tasks<br />
-│       │   └── main.yml<br />
-│       └── templates<br />
-│           └── zabbix_agentd.conf<br />
+│ &nbsp;&nbsp;&nbsp;  ├── falcon-agent<br />
+│ &nbsp;&nbsp;&nbsp;  │   ├── defaults<br />
+│ &nbsp;&nbsp;&nbsp;  │   │   └── main.yml<br />
+│ &nbsp;&nbsp;&nbsp;  │   ├── tasks<br />
+│ &nbsp;&nbsp;&nbsp;  │   │   └── main.yml<br />
+│ &nbsp;&nbsp;&nbsp;  │   └── templates<br />
+│ &nbsp;&nbsp;&nbsp;  │       ├── cfg.json.j2<br />
+│ &nbsp;&nbsp;&nbsp;  │       └── falcon_agent.ini.j2<br />
+│ &nbsp;&nbsp;&nbsp;  ├── iptables<br />
+│ &nbsp;&nbsp;&nbsp;  │   └── tasks<br />
+│ &nbsp;&nbsp;&nbsp;  │       └── main.yml<br />
+│ &nbsp;&nbsp;&nbsp;  ├── repo<br />
+│ &nbsp;&nbsp;&nbsp;  │   ├── tasks<br />
+│ &nbsp;&nbsp;&nbsp;  │   │   └── main.yml<br />
+│ &nbsp;&nbsp;&nbsp;  │   └── templates<br />
+│ &nbsp;&nbsp;&nbsp;  │       ├── epel.repo.j2<br />
+│ &nbsp;&nbsp;&nbsp;  │       └── szy.repo.j2<br />
+│ &nbsp;&nbsp;&nbsp;  ├── supervisord<br />
+│ &nbsp;&nbsp;&nbsp;  │   ├── defaults<br />
+│ &nbsp;&nbsp;&nbsp;  │   ├── tasks<br />
+│ &nbsp;&nbsp;&nbsp;  │   │   └── main.yml<br />
+│ &nbsp;&nbsp;&nbsp;  │   └── templates<br />
+│ &nbsp;&nbsp;&nbsp;  │       ├── supervisord.conf.j2<br />
+│ &nbsp;&nbsp;&nbsp; │       └── supervisord.j2<br />
+│ &nbsp;&nbsp;&nbsp;  ├── user<br />
+│ &nbsp;&nbsp;&nbsp;  │   ├── defaults<br />
+│ &nbsp;&nbsp;&nbsp;  │   │   └── main.yml<br />
+│ &nbsp;&nbsp;&nbsp;  │   └── tasks<br />
+│ &nbsp;&nbsp;&nbsp;  │       └── main.yml<br />
+│ &nbsp;&nbsp;&nbsp;  └── zabbix<br />
+│ &nbsp;&nbsp;&nbsp;      ├── defaults<br />
+│ &nbsp;&nbsp;&nbsp;      │   └── main.yml<br />
+│ &nbsp;&nbsp;&nbsp;      ├── handlers<br />
+│ &nbsp;&nbsp;&nbsp;      ├── meta<br />
+│ &nbsp;&nbsp;&nbsp;      ├── tasks<br />
+│ &nbsp;&nbsp;&nbsp;      │   └── main.yml<br />
+│ &nbsp;&nbsp;&nbsp;      └── templates<br />
+│ &nbsp;&nbsp;&nbsp;          └── zabbix_agentd.conf<br />
 └── task<br />
 &nbsp;&nbsp;├── install.sh<br />
 &nbsp;&nbsp;├── LICENSE<br />
