@@ -1,0 +1,59 @@
+########## 判断服务器是否有easy-install 安装的 supervisor ##########
+#- name: supervisord
+#  shell: /bin/cat /usr/lib/python2.7/site-packages/easy-install.pth|grep supervisor >/dev/null 2>&1
+#  register: result
+#  ignore_errors: True
+
+- name: supervisord
+  shell: /bin/rpm -qa|grep supervisor
+  register: result
+  ignore_errors: True
+###################################################################
+
+########## 如果已安装supervisor ##########
+- name: test result
+  shell: echo "ok"
+  when: result.rc == 0
+##########################################
+
+########## 如果没有装supervisor ##########
+#- name: test no result
+#  script: /etc/ansible/task/install.sh 
+#  when: result.rc != 0
+
+- name: Install falcon-agent packge
+  yum: name=supervisor state=latest
+  when: result.rc != 0
+##########################################
+
+########## 检测目录，如没有创建 #########
+- name: Ensure direcotory exists
+  file: path={{ item }} state=directory owner=root group=root
+  with_items:
+    - /etc/supervisord.d
+    - /data/logs/error/supervisor
+#########################################
+
+########## 复制配置文件 ##########
+- name: cp supervisord.conf
+  template: src={{item.src}} dest={{item.dest}} owner=root group=root mode={{item.mode}} force=yes backup=yes
+  with_items:
+    - { src: 'supervisord.conf.j2', dest: '/etc/supervisord.conf', mode: 644 }
+    - { src: 'supervisord.j2', dest: '/etc/init.d/supervisord', mode: 755 }
+##################################
+
+########## 添加开机启动 ##########
+- name: start supervisor
+  shell: chkconfig supervisord on
+  shell: /usr/bin/systemctl restart supervisord.service
+#- name: start supervisor
+#  shell: chkconfig supervisord on
+
+#  shell: /usr/bin/systemctl restart supervisord.service
+
+#- name: install supervisor
+#  script: /opt/install.sh
+#  yum: name=supervisor state=latest
+
+
+

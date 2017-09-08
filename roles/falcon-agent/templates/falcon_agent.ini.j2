@@ -1,0 +1,15 @@
+[program:falcon_agent]
+command=/usr/local/falcon-agent/bin/falcon-agent -c /usr/local/falcon-agent/config/cfg.json
+user=root                           ;执行命令的用户
+#numprocs=3                            ; 启动几个进程 默认 1
+process_name=%(process_num)02d
+directory=/usr/local/falcon-agent                              ; 执行前要不要先cd到目录去
+autostart=true                          ; 随着supervisord的启动而启动
+autorestart=true                        ; 是否自动重启 默认true
+startretries=3                          ; 启动失败时的最多重试次数 默认3
+exitcodes=0                            ; 正常退出代码
+stopsignal=KILL                         ; 用来杀死进程的信号
+;stopwaitsecs=10                        ; 发送SIGKILL前的等待时间
+redirect_stderr=true                     ; 重定向stderr到stdout
+stdout_logfile=/usr/local/falcon-agent/logs/agent.log
+stderr_logfile=/logs/error/supervisor/falcon_agent.log

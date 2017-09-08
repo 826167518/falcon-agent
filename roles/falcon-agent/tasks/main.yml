@@ -1,0 +1,53 @@
+########## 确保mymon，agent目录存在 ########
+- name: Ensure direcotory exists
+  file: path={{ item }} state=directory owner=root group=root
+  with_items:
+    - /data/logs/open-falcon/mymon
+    - /data/logs/open-falcon/agent
+############################################
+
+########## 安装falcon-agent客户端 ##########
+- name: Install falcon-agent packge
+  yum: name=falcon-agent state=latest
+############################################
+
+######### 判断supervisord.d目录是否存在 ####  
+- name: ls /etc/supervisord.d
+  shell: /bin/ls /etc/supervisord.d
+  register: result
+  ignore_errors: True
+############################################
+
+######### 如果supervisord.d目录不存在 ######
+- name: supervisord no result
+  template: src={{item.src}} dest={{item.dest}} owner=root group=root mode={{item.mode}} force=yes backup=yes
+  with_items:
+    - { src: 'falcon_agent.ini.j2', dest: '/usr/local/falcon-agent/scripts/falcon_agent.ini', mode: 644 }
+  when: result.rc != 0
+############################################
+
+######### 如果supervisord.d目录存在 ########
+- name: supervisord  result
+  template: src={{item.src}} dest={{item.dest}} owner=root group=root mode={{item.mode}} force=yes backup=yes
+  with_items:
+    - { src: 'falcon_agent.ini.j2', dest: '/etc/supervisord.d/falcon_agent.ini', mode: 644 }
+  when: result.rc == 0
+
+- name: Ensure direcotory exists supervisor
+  file: path={{ item }} state=directory owner=root group=root
+  with_items:
+    - /data/logs/error/supervisor
+  when: result.rc == 0
+############################################
+
+########## 复制falcon-agent的配置模板 ######
+- name: Put on the falcon-agent conf files
+  template: src={{item.src}} dest={{item.dest}} owner=root group=root mode={{item.mode}} force=yes backup=yes
+  with_items:
+    - { src: 'cfg.json.j2', dest: '/usr/local/falcon-agent/config/cfg.json', mode: 644 }
+###########################################
+
+- name: start supervisor
+  shell: /usr/bin/systemctl restart supervisord.service
+#- name: falcon-agent restart 
+#  shell: /usr/local/falcon-agent/bin/falcon-agent -c /usr/local/falcon-agent/config/cfg.json &
