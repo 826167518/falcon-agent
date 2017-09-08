@@ -6,11 +6,9 @@
 
 文件目录结构：
 
-falcon-agent
-
-├── ansible.cfg 
-
-├── hosts
+falcon-agent <br />
+├── ansible.cfg <br />
+├── hosts<br />
 
 ├── inventory
 
