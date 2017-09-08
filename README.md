@@ -61,9 +61,9 @@ falcon-agent <br />
 │       └── templates<br />
 │           └── zabbix_agentd.conf<br />
 └── task<br />
-    ├── install.sh <br />
-    ├── LICENSE<br />
-    └── README.md<br />
+     ├── install.sh <br />
+     ├── LICENSE<br />
+     └── README.md<br />
 
 
 安装完毕ansible之后，直接进入到该文件的ansible.cfg的同级目录下
